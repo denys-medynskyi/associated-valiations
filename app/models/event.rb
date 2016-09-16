@@ -7,8 +7,6 @@ class Event < ApplicationRecord
   private
 
   def event_categories_presence
-  	if categories.empty?
-  		errors.add(:categories, "needs categories")
-  	end	
-  end	
+    errors.add(:categories, 'needs categories') if categories.empty?
+  end
 end

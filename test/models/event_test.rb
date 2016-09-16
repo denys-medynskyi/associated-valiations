@@ -8,7 +8,7 @@ class EventTest < ActiveSupport::TestCase
     assert event.update(category_ids: []), false
   end
 
-  test 'does not delete event categories when empty array is assigned' do
+  test 'deletes event categories when empty array is assigned' do
     cagegory = Category.create
     event = Event.new(category_ids: [cagegory.id])
     event.categories = []
